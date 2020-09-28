@@ -92,7 +92,7 @@ class AddMeeting extends Component {
             errors.endMinErrors.push("End Min should be between 0 and 59")
             isValid = false;
         }
-        if( description.trim() === '' ) {
+        if( description.trim() === "" ) {
             errors.descErrors.push( 'Description cannot be empty' );
             isValid = false;
         }
@@ -104,14 +104,7 @@ class AddMeeting extends Component {
             errors.startHourErrors.push("Start Hour cannot be lesser than End Hour");
             isValid = false;
         }
-        if( email.trim() === '' ) {
-            errors.emailErrors.push( 'Email cannot be empty' );
-            isValid = false;
-        }
-        if(!validateEmail(email)){
-            errors.emailErrors.push( 'Invalid Email' );
-            isValid = false;
-        }
+        
         this.setState({
             isValid,
             errors
@@ -166,25 +159,25 @@ class AddMeeting extends Component {
                         <div className="form-group row">
                             <label htmlFor="startTime" className="col-sm-3 col-form-label">Start Time</label>
                             <div className="col-sm-9">
-                                <input type="number" className="form-control" name="startHour" id="startHour" placeholder="Enter Start Hours" ref={this.shInputRef} onChange={this.updateCredentials} />
+                                <input type="number" className="form-control" name="startHour" id="startHour" placeholder="Enter Start Hours" ref={this.shInputRef} onChange={this.updateCredentials}  required/>
                                 {this.state.errors.startHourErrors.map( err => <div className="alert alert-danger alert-sm">{err}</div> )}
-                                <input type="number" className="form-control" name="startMin" id="startMin" placeholder="Enter Start Minutes" ref={this.smInputRef} onChange={this.updateCredentials} />
+                                <input type="number" className="form-control" name="startMin" id="startMin" placeholder="Enter Start Minutes" ref={this.smInputRef} onChange={this.updateCredentials} required/>
                                 {this.state.errors.startMinErrors.map( err => <div className="alert alert-danger">{err}</div> )}
                             </div>
                         </div>
                         <div className="form-group row">
                             <label htmlFor="endTime" className="col-sm-3 col-form-label">End Time</label>
                             <div className="col-sm-9">
-                                <input type="number" className="form-control" name="endHour" id="endHour" placeholder="Enter Ending Hours" ref={this.ehInputRef} onChange={this.updateCredentials}/>
+                                <input type="number" className="form-control" name="endHour" id="endHour" placeholder="Enter Ending Hours" ref={this.ehInputRef} onChange={this.updateCredentials} required/>
                                 {this.state.errors.endHourErrors.map( err => <div className="alert alert-danger">{err}</div> )}
-                                <input type="number" className="form-control" name="endMin" id="endMin" placeholder="Enter Ending Minutes" ref={this.emInputRef} onChange={this.updateCredentials}/>
+                                <input type="number" className="form-control" name="endMin" id="endMin" placeholder="Enter Ending Minutes" ref={this.emInputRef} onChange={this.updateCredentials} required/>
                                 {this.state.errors.endMinErrors.map( err => <div className="alert alert-danger">{err}</div> )}
                             </div>
                         </div>
                         <div className="form-group row">
                             <label htmlFor="emails" className="col-sm-3 col-form-label">Emails of Attendees</label>
                             <div className="col-sm-9">
-                                <input type="email" className="form-control" name="emails" id="emails" placeholder="john@example.com,jane@example.com" ref={this.emailInputRef} onChange={this.updateCredentials} />
+                                <input type="text" className="form-control" name="emails" id="emails" placeholder="john@example.com,jane@example.com" ref={this.emailInputRef} onChange={this.updateCredentials} />
                                 {this.state.errors.emailErrors.map( err => <div className="alert alert-danger">{err}</div> )}
 
                             </div>
@@ -192,7 +185,7 @@ class AddMeeting extends Component {
                         <div className="form-group row">
                             <label htmlFor="description" className="col-sm-3 col-form-label">Description</label>
                             <div className="col-sm-9">
-                                <textarea className="form-control" id="description" name="description" rows="3" placeholder="What is the Agenda of the meeting?" ref={this.descInputRef} onChange={this.updateCredentials}></textarea>
+                                <textarea className="form-control" id="description" name="description" rows="3" placeholder="What is the Agenda of the meeting?" ref={this.descInputRef} onChange={this.updateCredentials} required></textarea>
                                 {this.state.errors.descErrors.map( err => <div className="alert alert-danger">{err}</div> )}
                             </div>
                         </div>

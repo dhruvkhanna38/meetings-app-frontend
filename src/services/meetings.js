@@ -2,7 +2,7 @@ import axios from 'axios'
 import {getAuthToken} from "./auth"
 
 
-const baseURL = "http://backendcode-env.eba-npvtjcsv.us-east-2.elasticbeanstalk.com";
+const baseURL = "http://backendcode-env.eba-hrcuuwjk.ap-south-1.elasticbeanstalk.com";
 const meetingsURL = `${baseURL}/meetings`;
 const usersURL = `${baseURL}/emails`;
 const profileURL = `${baseURL}/users/me`;

@@ -44,6 +44,10 @@ class Signup extends Component {
             errors.passwordErrors.push("Password cannot contain the word password")
             isValid = false;
         }
+        if(password.length < 7){
+            errors.passwordErrors.push("Password must be atleast 7 characters")
+            isValid = false;
+        }
         if(password.trim() === ''){
             errors.passwordErrors.push("Password cannot be Empty")
             isValid = false;
@@ -62,8 +66,7 @@ class Signup extends Component {
         event.preventDefault();
         try{
             await signup(this.state);
-            this.props.history.push("/");
-            window.location.reload();
+            this.props.history.push("/verify-email");
         }catch(error){
             alert("Invalid Credentials");
         }

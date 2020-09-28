@@ -4,7 +4,7 @@ import {isLoggedIn, logout} from "../services/auth.js"
 import { Redirect , withRouter} from 'react-router-dom'
 import {getProfile} from "../services/meetings";
 
-const baseURL = "http://backendcode-env.eba-npvtjcsv.us-east-2.elasticbeanstalk.com";
+const baseURL = "http://backendcode-env.eba-hrcuuwjk.ap-south-1.elasticbeanstalk.com";
 
 class NavBar extends React.Component {
     constructor(props){
@@ -25,7 +25,6 @@ class NavBar extends React.Component {
         }
     }
     
-
 
     componentDidMount = async ()=> {
             const profile = await getProfile();

@@ -1,12 +1,15 @@
+/* eslint-disable no-useless-constructor */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import NavBar from './NavBar';
-import Home from "./Home";
+import ResponsiveDrawer from './Home'
 import Login from "./Login";
 import Meetings from "./Meetings";
 import Signup from "./Signup";
 import { Route, withRouter, BrowserRouter} from 'react-router-dom';
 import Calender from "./Calender";
 import Profile from "./Profile";
+import VerifyEmail from "./VerifyEmail";
 
 class App extends React.Component {
 
@@ -19,7 +22,7 @@ class App extends React.Component {
         <BrowserRouter>
             <div>
                 <NavBar />
-                <Route path="/" exact component={Home}>
+                <Route path="/" exact component={ResponsiveDrawer}>
                 </Route>
                 <Route path="/login" exact component={Login}>
                 </Route>
@@ -30,6 +33,8 @@ class App extends React.Component {
                 <Route path="/calender" exact component={Calender}>
                 </Route>
                 <Route path="/profile" exact component={Profile}>
+                </Route>
+                <Route path="/verify-email" exact component={VerifyEmail}>
                 </Route>
             </div>
         </BrowserRouter>

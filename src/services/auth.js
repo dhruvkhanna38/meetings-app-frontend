@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = "http://backendcode-env.eba-npvtjcsv.us-east-2.elasticbeanstalk.com";
+const baseURL = "http://backendcode-env.eba-hrcuuwjk.ap-south-1.elasticbeanstalk.com";
 const loginURL = `${baseURL}/users/login`;
 const signupURL = `${baseURL}/users`
 
@@ -27,24 +27,46 @@ export async function login(credentials){
         throw new Error("Incorrect Credentials");
     }
 }
+
+export async function checkVerification(emailToken){
+    console.log(emailToken);
+    try{
+        const response = await axios.get(`${baseURL}/checkVerification`, {params:{emailToken}  , ...axiosOptions});
+        return response;
+    }catch(error){
+        throw new Error("User not found");
+    }
+}
+
+
 export async function signup(credentials){
     console.log(credentials)
-    
-    const response = await axios.post(signupURL, credentials, {
-         ...axiosOptions,
-         headers: {
-             'Content-Type': 'application/json'
-         }
-     });
-     if (response.data) {
-         localStorage.setItem('token', response.data.token);
-         localStorage.setItem('email', response.data.user.email);
-         isLoggedIn = true;
-         return response.data;
+     try{
+        const response = await axios.post(signupURL, credentials, {
+            ...axiosOptions,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if(response.data){
+            localStorage.setItem('emailToken', response.data.emailToken);
+            return response.data;
+        }
+        else{
+            throw new Error("Invalid Credentials");
+        }
+     }catch(error){
+        throw new Error("Invalid Credentials");
      }
-     else {
-         throw new Error("Incorrect Credentials");
-     }
+    //  if (response.data) {
+    //      localStorage.setItem('token', response.data.token);
+    //      localStorage.setItem('email', response.data.user.email);
+    //      isLoggedIn = true;
+    //      return response.data;
+    //  }
+    //  else {
+    //      throw new Error("Incorrect Credentials");
+    //  }
 }
 
 export function logout(){
@@ -60,3 +82,5 @@ export function getAuthToken(){
 export function getEmail(){
     return localStorage.getItem('email');
 }
+
+

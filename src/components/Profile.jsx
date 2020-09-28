@@ -4,7 +4,7 @@ import {getProfile, setProfileNavbar, updateUserEmail,updatePassword} from "../s
 import {logout} from "../services/auth.js"
 import { Route, Link, Switch, BrowserRouter } from 'react-router-dom';
 import {getEmails} from '../services/meetings.js';
-const baseURL ="http://backendcode-env.eba-npvtjcsv.us-east-2.elasticbeanstalk.com";
+const baseURL ="http://backendcode-env.eba-hrcuuwjk.ap-south-1.elasticbeanstalk.com";
 
 class Profile extends Component {
     constructor(props){
@@ -13,9 +13,10 @@ class Profile extends Component {
             Status:'Fetching',
             profile : null,
             image:null,
-            email:null,
+            email:'',
             imageURL:"https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            password:"",
+            password:'',
+            passwordVerify:'',
             errors:{
                 emailErrors:[],
                 passwordErrors:[]
@@ -29,8 +30,8 @@ class Profile extends Component {
         this.newPasswordVerifyInputRef = React.createRef();
     }
 
-    validate= async ()=>{
-        const {email, password} = this.state;
+    validate= ()=>{
+        const {email, password, passwordVerify} = this.state;
         const errors = {
             emailErrors:[], 
             passwordErrors :[],
@@ -49,8 +50,16 @@ class Profile extends Component {
             errors.passwordErrors.push("Password cannot contain the word password")
             isValid = false;
         }
-        if(password.trim() === ''){
+        if(password.trim() === ""){
             errors.passwordErrors.push("Password cannot be Empty")
+            isValid = false;
+        }
+        if(password.length < 7){
+            errors.passwordErrors.push("Password must be atleast 7 characters")
+            isValid = false;
+        }
+        if(password !==passwordVerify){
+            errors.passwordErrors.push("Passwords do not match")
             isValid = false;
         }
         this.setState({
@@ -77,6 +86,11 @@ class Profile extends Component {
             alert("Password sholud be atleast 7 characters long");
         }
     }
+    updatePasswordVerify = ()=>{
+        this.setState({
+            passwordVerify:this.newPasswordVerifyInputRef.current.value
+        }, this.validate)
+    }
 
     updatePassword=()=>{
         this.setState({
@@ -100,7 +114,6 @@ class Profile extends Component {
             alert("Email Changed");
             this.componentDidMount();
             this.props.history.push("/profile")
-            
         }catch(error){
             alert("Enter Valid Email");
         }   
@@ -164,21 +177,7 @@ class Profile extends Component {
                             </Route>
                             <div>
                                 <Switch>
-                                     <Route path="/profile/email" exact={true}>
-                                        <div>
-                                            <div className="container alert alert-info w-50 m-5 mx-auto">
-                                                <form onSubmit={this.onEmailSubmit} className="form-group row">
-                                                        <div className="input-group mb-3">
-                                                            <span className="input-group-text" id="inputGroup-sizing-default">Enter New Email</span>
-                                                            <input type="email" defaultValue={this.state.profile.user.email} onChange={this.updateEmail} ref={this.emailInputRef} className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" />
-                                                        </div>
-                                                        {this.state.errors.emailErrors.map( err => <div className="alert alert-danger alert">{err}</div> )}
-
-                                                        <button className="btn btn-primary w-100 mt-3">Submit</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </Route>
+                                
                                     <Route path='/profile/password' exact={true}>
                                         <div>
                                             <form onSubmit={this.onPasswordSubmit} className="alert alert-info w-50 m-5 mx-auto">
@@ -190,23 +189,24 @@ class Profile extends Component {
                                                                 {/* set defaultValue to default email */}
                                                                 <span className="input-group-text" id="inputGroup-sizing-default">Old Password</span>
                                                             </div>
-                                                            <input type="password"  ref={this.currentPasswordInputRef} className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+                                                            <input type="password"  ref={this.currentPasswordInputRef} className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" required/>
                                                         </div>
                                                         <div className="input-group mb-3">
                                                             <div className="input-group-prepend">
                                                                 {/* set defaultValue to default email */}
                                                                 <span className="input-group-text" id="inputGroup-sizing-default">New Password</span>
                                                             </div>
-                                                            <input type="password"  ref={this.newPasswordInputRef} className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+                                                            <input type="password"  ref={this.newPasswordInputRef} onChange={this.updatePassword} className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" required/>
                                                         </div>
                                                         <div className="input-group mb-3">
                                                             <div className="input-group-prepend">
                                                                 {/* set defaultValue to default email */}
                                                                 <span className="input-group-text" id="inputGroup-sizing-default">Confirm New Password</span>
                                                             </div>
-                                                            <input type="password"  ref={this.newPasswordVerifyInputRef} className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+                                                            <input type="password"  ref={this.newPasswordVerifyInputRef} onChange={this.updatePasswordVerify} className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" required/>
                                                         </div>
                                                         <button className="btn btn-primary w-100 mt-3">Submit</button>
+                                                        {this.state.errors.passwordErrors.map( err => <div className="alert alert-danger alert">{err}</div> )}
                                             </form>
                                         </div>
                                     </Route>
@@ -230,7 +230,6 @@ class Profile extends Component {
                         <div>
                             <Link to="/profile" className="btn btn-primary mr-2" exact="true">View Profile</Link>
                             <Link to="/profile/password" className="btn btn-primary mr-2 ml-2" exact="true">Change Password</Link> 
-                            <Link to="/profile/email" className="btn btn-primary ml-2" exact="true">Change Email</Link>
                         </div>
                     </div>
                 </div>
