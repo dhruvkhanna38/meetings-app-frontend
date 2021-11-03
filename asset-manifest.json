@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/meetings-app-frontend/static/css/main.2d5ddf10.chunk.css",
+    "main.js": "/meetings-app-frontend/static/js/main.d8a6c502.chunk.js",
+    "main.js.map": "/meetings-app-frontend/static/js/main.d8a6c502.chunk.js.map",
+    "runtime-main.js": "/meetings-app-frontend/static/js/runtime-main.cf1f6c26.js",
+    "runtime-main.js.map": "/meetings-app-frontend/static/js/runtime-main.cf1f6c26.js.map",
+    "static/css/2.a8a46a17.chunk.css": "/meetings-app-frontend/static/css/2.a8a46a17.chunk.css",
+    "static/js/2.95b07f2c.chunk.js": "/meetings-app-frontend/static/js/2.95b07f2c.chunk.js",
+    "static/js/2.95b07f2c.chunk.js.map": "/meetings-app-frontend/static/js/2.95b07f2c.chunk.js.map",
+    "index.html": "/meetings-app-frontend/index.html",
+    "precache-manifest.d200ac920c90af1f1a589d4056cfc0eb.js": "/meetings-app-frontend/precache-manifest.d200ac920c90af1f1a589d4056cfc0eb.js",
+    "service-worker.js": "/meetings-app-frontend/service-worker.js",
+    "static/css/2.a8a46a17.chunk.css.map": "/meetings-app-frontend/static/css/2.a8a46a17.chunk.css.map",
+    "static/css/main.2d5ddf10.chunk.css.map": "/meetings-app-frontend/static/css/main.2d5ddf10.chunk.css.map",
+    "static/js/2.95b07f2c.chunk.js.LICENSE.txt": "/meetings-app-frontend/static/js/2.95b07f2c.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/meetings-app-frontend/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cf1f6c26.js",
+    "static/css/2.a8a46a17.chunk.css",
+    "static/js/2.95b07f2c.chunk.js",
+    "static/css/main.2d5ddf10.chunk.css",
+    "static/js/main.d8a6c502.chunk.js"
+  ]
+}
