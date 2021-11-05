@@ -22,7 +22,6 @@ class Login extends Component {
         event.preventDefault();
         try{
             await login(this.state)
-            this.props.history.push('/');
             window.location.reload();
         }catch(error){
             alert("Invalid Credentials");
