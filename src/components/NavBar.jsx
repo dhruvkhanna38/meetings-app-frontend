@@ -4,7 +4,7 @@ import {isLoggedIn, logout} from "../services/auth.js"
 import { Redirect , withRouter} from 'react-router-dom'
 import {getProfile} from "../services/meetings";
 
-const baseURL = "http://backendcode-env.eba-hrcuuwjk.ap-south-1.elasticbeanstalk.com";
+const baseURL = "https://calm-garden-60687.herokuapp.com";
 
 class NavBar extends React.Component {
     constructor(props){

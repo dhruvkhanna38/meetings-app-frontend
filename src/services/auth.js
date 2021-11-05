@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = "http://backendcode-env.eba-hrcuuwjk.ap-south-1.elasticbeanstalk.com";
+const baseURL = "https://calm-garden-60687.herokuapp.com";
 const loginURL = `${baseURL}/users/login`;
 const signupURL = `${baseURL}/users`
 

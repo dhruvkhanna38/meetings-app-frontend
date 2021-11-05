@@ -4,7 +4,7 @@ import {getProfile, setProfileNavbar, updateUserEmail,updatePassword} from "../s
 import {logout} from "../services/auth.js"
 import { Route, Link, Switch, BrowserRouter } from 'react-router-dom';
 import {getEmails} from '../services/meetings.js';
-const baseURL ="http://backendcode-env.eba-hrcuuwjk.ap-south-1.elasticbeanstalk.com";
+const baseURL ="https://calm-garden-60687.herokuapp.com";
 
 class Profile extends Component {
     constructor(props){
