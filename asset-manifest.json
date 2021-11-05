@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/meetings-app-frontend/static/css/main.2d5ddf10.chunk.css",
-    "main.js": "/meetings-app-frontend/static/js/main.2454ce15.chunk.js",
-    "main.js.map": "/meetings-app-frontend/static/js/main.2454ce15.chunk.js.map",
+    "main.js": "/meetings-app-frontend/static/js/main.9d9423d3.chunk.js",
+    "main.js.map": "/meetings-app-frontend/static/js/main.9d9423d3.chunk.js.map",
     "runtime-main.js": "/meetings-app-frontend/static/js/runtime-main.cf1f6c26.js",
     "runtime-main.js.map": "/meetings-app-frontend/static/js/runtime-main.cf1f6c26.js.map",
     "static/css/2.a8a46a17.chunk.css": "/meetings-app-frontend/static/css/2.a8a46a17.chunk.css",
     "static/js/2.95b07f2c.chunk.js": "/meetings-app-frontend/static/js/2.95b07f2c.chunk.js",
     "static/js/2.95b07f2c.chunk.js.map": "/meetings-app-frontend/static/js/2.95b07f2c.chunk.js.map",
     "index.html": "/meetings-app-frontend/index.html",
-    "precache-manifest.53df73e3bb84554cb6c9b06213f91f9d.js": "/meetings-app-frontend/precache-manifest.53df73e3bb84554cb6c9b06213f91f9d.js",
+    "precache-manifest.8618d42002f0cc8187f4bf5b964325b0.js": "/meetings-app-frontend/precache-manifest.8618d42002f0cc8187f4bf5b964325b0.js",
     "service-worker.js": "/meetings-app-frontend/service-worker.js",
     "static/css/2.a8a46a17.chunk.css.map": "/meetings-app-frontend/static/css/2.a8a46a17.chunk.css.map",
     "static/css/main.2d5ddf10.chunk.css.map": "/meetings-app-frontend/static/css/main.2d5ddf10.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.a8a46a17.chunk.css",
     "static/js/2.95b07f2c.chunk.js",
     "static/css/main.2d5ddf10.chunk.css",
-    "static/js/main.2454ce15.chunk.js"
+    "static/js/main.9d9423d3.chunk.js"
   ]
 }
