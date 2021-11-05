@@ -7,13 +7,11 @@ import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -28,7 +26,6 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import {isLoggedIn, logout} from "../services/auth.js"
-import {getProfile} from "../services/meetings.js";
 
 const logoutFunction = async ()=>{
     try{

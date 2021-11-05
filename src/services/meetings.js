@@ -11,7 +11,6 @@ const meetingsSearchURL =`${baseURL}/meetings/search`;
 const removeUserURL = `${baseURL}/meetings/removeUser/`;
 const addMemberURL = `${baseURL}/meetings/addUser/`;
 const setAvatarURL = `${baseURL}/users/me/profileNavbar`;
-const setProfileURL = `${baseURL}/users/me/profilePicture`;
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + getAuthToken();
 

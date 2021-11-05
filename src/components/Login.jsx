@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-no-undef */
 import React, { Component } from 'react';
 import {login} from "../services/auth.js";
-import {Redirect ,Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import "./Login.css"
 
 class Login extends Component {

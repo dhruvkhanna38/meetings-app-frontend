@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {isLoggedIn, logout} from "../services/auth.js"
-import { Redirect , withRouter} from 'react-router-dom'
+import { withRouter} from 'react-router-dom'
 import {getProfile} from "../services/meetings";
 
 const baseURL = "https://calm-garden-60687.herokuapp.com";

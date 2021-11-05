@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import Meetings from './Meetings'
 import {addMeeting} from "../services/meetings.js"
 import {getEmail} from "../services/auth.js"
-import {getEmails} from "../services/meetings.js"
-import { Route, Link, Switch } from 'react-router-dom';
 const moment = require('moment');
 
 

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import {getMeetings} from "../services/meetings.js"
 import { Route, Link, Switch, BrowserRouter } from 'react-router-dom';
 import AddMeeting from "./AddMeeting"
 import SearchMeetings from "./SearchMeetings"
-import {getEmails} from "../services/meetings.js"
 
 class Meetings extends Component {
 
